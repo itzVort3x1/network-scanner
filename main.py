@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 import scapy.all as scapy
-import optparse
+import argparse
 
 
 def get_arguments():
-    parser = optparse.OptionParser()
-    parser.add_option("-t", "--target", dest="target", help="Network Target to scan")
-    (options, arguments) = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-t", "--target", dest="target", help="Network Target to scan")
+    options = parser.parse_args()
     if not options.target:
         parser.error("[-] Please specify a target to scan for, use --help for more info")
     else:
